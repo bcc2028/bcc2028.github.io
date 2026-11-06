@@ -84,3 +84,17 @@ footer .wrap { display: flex; justify-content: space-between; gap: .8rem; flex-w
   .nav-links { column-gap: .98rem; }
   .nav-links a { font-size: .88rem; }
 }
+
+.committee { padding-block: 1rem 2.8rem; }
+.committee > h2 { font-size: clamp(1.65rem, 2.5vw, 2.25rem); margin-bottom: .7rem; }
+.crew-scroll { overflow-x: auto; margin-top: 1.5rem; padding-bottom: 1rem; }
+.crew-scroll:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.crew { margin: 0; min-width: 700px; }
+.crew img { display: block; width: 100%; height: auto; }
+.crew-order { font-size: .85rem; color: var(--rust); margin: .5rem 0 .75rem; }
+.crew-names { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; list-style: none; padding: 0 13% 0 19%; margin: 0; }
+.crew-names a { font-size: .97rem; font-weight: 600; }
+.crew-scroll-hint { display: none; }
+@media (max-width: 780px) {
+  .crew-scroll-hint { display: block; font-size: .85rem; color: var(--rust); margin-top: .7rem; }
+}
