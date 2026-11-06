@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light;
+  --paper: #fbf8ee;
+  --ink: #183737;
+  --teal: #175550;
+  --rust: #a4402a;
+  --line: #c6cbc1;
+  --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Avenir Next", Avenir, system-ui, sans-serif; }
+a { color: inherit; text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid var(--rust); outline-offset: 5px; }
+.wrap { width: min(1280px, 90%); margin-inline: auto; }
+.skip { position: absolute; top: -6rem; padding: .8rem; background: white; z-index: 3; }
+.skip:focus { top: .5rem; }
+.masthead, nav, .brand, .calendar, .eyebrow, figcaption, footer, .links { display: flex; align-items: center; }
+.masthead { min-height: 84px; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); }
+.brand { gap: .32em; font-size: 1.32rem; font-weight: 750; letter-spacing: -.05em; text-decoration: none; }
+.brand img { margin-right: .25em; }
+.brand span { font-weight: 450; }
+nav { gap: clamp(1rem, 3vw, 2.7rem); }
+nav a, footer a { text-decoration: none; font-size: .92rem; font-weight: 550; }
+nav a:hover, footer a:hover { text-decoration: underline; }
+.hero { display: grid; grid-template-columns: 1fr 1.06fr; align-items: center; gap: 5%; padding-block: clamp(3rem, 6vw, 6.3rem); }
+.eyebrow, figcaption small { font-family: "Courier New", monospace; text-transform: uppercase; letter-spacing: .13em; font-weight: bold; }
+.eyebrow { color: var(--rust); gap: .8rem; font-size: .78rem; margin: 0 0 1.5rem; }
+.rule { width: 2.2rem; height: 2px; background: currentColor; }
+h1, h2, .lead, figcaption span { font-family: var(--serif); font-weight: 500; }
+h1 { font-size: clamp(3.65rem, 5.7vw, 5.6rem); line-height: .99; letter-spacing: -.057em; margin: 0; }
+.dateline { margin: 1.6rem 0 1.85rem; font-size: clamp(1rem, 1.47vw, 1.32rem); font-weight: 600; }
+.dateline span { color: var(--rust); padding: 0 .25em; }
+.calendar { width: fit-content; gap: .65rem; background: var(--teal); color: white; padding: .84rem 1.22rem; border-radius: 3px; font-size: .92rem; font-weight: 650; text-decoration: none; }
+.calendar:hover { background: #103e3a; }
+.calendar svg { width: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.print { min-width: 0; margin: 0 .4rem; padding: clamp(.6rem, 1.1vw, 1rem); border: 1px solid #d1cbb9; background: #fffdf4; transform: rotate(1.6deg); box-shadow: 3px 5px 0 #e7e2d2; }
+.waterfront { width: 100%; height: auto; aspect-ratio: 1.43; object-fit: cover; display: block; }
+figcaption { margin: .7rem .2rem 0; justify-content: space-between; }
+figcaption span { font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1; font-style: italic; letter-spacing: -.05em; }
+figcaption small { text-align: right; font-size: .65rem; line-height: 1.45; color: var(--teal); }
+.details { background: #fffef9; border-top: 1px solid var(--line); }
+.split { display: grid; grid-template-columns: .85fr 1.35fr; gap: 7%; padding-block: clamp(2.4rem, 4.3vw, 4.3rem); scroll-margin-top: 1rem; }
+.split + .split { border-top: 1px solid var(--line); }
+h2 { margin: 0; font-size: clamp(2.05rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1.15; }
+.split p, .names { margin: 0; font-size: 1.04rem; line-height: 1.65; max-width: 65ch; }
+.split .lead { font-size: clamp(1.55rem, 2.25vw, 2.15rem); letter-spacing: -.025em; line-height: 1.25; margin-bottom: 1rem; }
+.more { display: inline-block; margin-top: 1.1rem; color: var(--teal); font-weight: 650; font-size: .94rem; }
+.more span { margin-left: .2em; }
+.links { gap: 1.6rem; flex-wrap: wrap; }
+.names { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .4rem 1rem; }
+footer { justify-content: space-between; gap: 1.2rem; padding-block: 1.55rem; font-size: .86rem; }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 2.6rem; }
+  h1 { font-size: clamp(3.4rem, 9.3vw, 4.8rem); }
+  .split { grid-template-columns: 1fr; gap: 1.3rem; }
+  .print { max-width: 570px; }
+}
+@media (max-width: 530px) {
+  .masthead { align-items: start; flex-direction: column; gap: .45rem; padding-block: .85rem .55rem; }
+  nav { width: 100%; justify-content: space-between; gap: .5rem; }
+  nav a { font-size: .87rem; padding-block: .45rem; }
+  .brand img { width: 33px; height: 33px; }
+  .hero { padding-block: 2.3rem 2.6rem; }
+  .names { grid-template-columns: 1fr; }
+  footer { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
