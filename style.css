@@ -1,68 +1,86 @@
 :root {
   color-scheme: light;
-  --paper: #fbf8ee;
-  --ink: #183737;
+  --paper: #fcfaf2;
+  --ink: #173a39;
   --teal: #175550;
-  --rust: #a4402a;
-  --line: #c6cbc1;
+  --rust: #98412e;
+  --line: #cbd0c2;
   --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Avenir Next", Avenir, system-ui, sans-serif; }
-a { color: inherit; text-underline-offset: 4px; }
-a:focus-visible { outline: 3px solid var(--rust); outline-offset: 5px; }
-.wrap { width: min(1280px, 90%); margin-inline: auto; }
-.skip { position: absolute; top: -6rem; padding: .8rem; background: white; z-index: 3; }
-.skip:focus { top: .5rem; }
-.masthead, nav, .brand, .calendar, .eyebrow, figcaption, footer, .links { display: flex; align-items: center; }
-.masthead { min-height: 84px; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); }
-.brand { gap: .32em; font-size: 1.32rem; font-weight: 750; letter-spacing: -.05em; text-decoration: none; }
-.brand img { margin-right: .25em; }
-.brand span { font-weight: 450; }
-nav { gap: clamp(1rem, 3vw, 2.7rem); }
-nav a, footer a { text-decoration: none; font-size: .92rem; font-weight: 550; }
-nav a:hover, footer a:hover { text-decoration: underline; }
-.hero { display: grid; grid-template-columns: 1fr 1.06fr; align-items: center; gap: 5%; padding-block: clamp(3rem, 6vw, 6.3rem); }
-.eyebrow, figcaption small { font-family: "Courier New", monospace; text-transform: uppercase; letter-spacing: .13em; font-weight: bold; }
-.eyebrow { color: var(--rust); gap: .8rem; font-size: .78rem; margin: 0 0 1.5rem; }
-.rule { width: 2.2rem; height: 2px; background: currentColor; }
-h1, h2, .lead, figcaption span { font-family: var(--serif); font-weight: 500; }
-h1 { font-size: clamp(3.65rem, 5.7vw, 5.6rem); line-height: .99; letter-spacing: -.057em; margin: 0; }
-.dateline { margin: 1.6rem 0 1.85rem; font-size: clamp(1rem, 1.47vw, 1.32rem); font-weight: 600; }
-.dateline span { color: var(--rust); padding: 0 .25em; }
-.calendar { width: fit-content; gap: .65rem; background: var(--teal); color: white; padding: .84rem 1.22rem; border-radius: 3px; font-size: .92rem; font-weight: 650; text-decoration: none; }
-.calendar:hover { background: #103e3a; }
-.calendar svg { width: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.6; }
-.print { min-width: 0; margin: 0 .4rem; padding: clamp(.6rem, 1.1vw, 1rem); border: 1px solid #d1cbb9; background: #fffdf4; transform: rotate(1.6deg); box-shadow: 3px 5px 0 #e7e2d2; }
-.waterfront { width: 100%; height: auto; aspect-ratio: 1.43; object-fit: cover; display: block; }
-figcaption { margin: .7rem .2rem 0; justify-content: space-between; }
-figcaption span { font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1; font-style: italic; letter-spacing: -.05em; }
-figcaption small { text-align: right; font-size: .65rem; line-height: 1.45; color: var(--teal); }
-.details { background: #fffef9; border-top: 1px solid var(--line); }
-.split { display: grid; grid-template-columns: .85fr 1.35fr; gap: 7%; padding-block: clamp(2.4rem, 4.3vw, 4.3rem); scroll-margin-top: 1rem; }
-.split + .split { border-top: 1px solid var(--line); }
-h2 { margin: 0; font-size: clamp(2.05rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1.15; }
-.split p, .names { margin: 0; font-size: 1.04rem; line-height: 1.65; max-width: 65ch; }
-.split .lead { font-size: clamp(1.55rem, 2.25vw, 2.15rem); letter-spacing: -.025em; line-height: 1.25; margin-bottom: 1rem; }
-.more { display: inline-block; margin-top: 1.1rem; color: var(--teal); font-weight: 650; font-size: .94rem; }
-.more span { margin-left: .2em; }
-.links { gap: 1.6rem; flex-wrap: wrap; }
-.names { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .4rem 1rem; }
-footer { justify-content: space-between; gap: 1.2rem; padding-block: 1.55rem; font-size: .86rem; }
-@media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 2.6rem; }
-  h1 { font-size: clamp(3.4rem, 9.3vw, 4.8rem); }
-  .split { grid-template-columns: 1fr; gap: 1.3rem; }
-  .print { max-width: 570px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1.04rem/1.65 "Avenir Next", Avenir, system-ui, sans-serif; }
+a { color: var(--teal); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+a:hover { color: var(--rust); }
+a:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.wrap { width: min(1120px, 90%); margin-inline: auto; }
+.skip { position: absolute; z-index: 2; top: -8rem; padding: .7rem 1rem; background: white; }
+.skip:focus { top: .5rem; left: .5rem; }
+.banner {
+  background: #e7eddb url("assets/waterfront-banner.jpg") center 58% / cover no-repeat;
+  border-bottom: 1px solid #98aba0;
 }
-@media (max-width: 530px) {
-  .masthead { align-items: start; flex-direction: column; gap: .45rem; padding-block: .85rem .55rem; }
-  nav { width: 100%; justify-content: space-between; gap: .5rem; }
-  nav a { font-size: .87rem; padding-block: .45rem; }
-  .brand img { width: 33px; height: 33px; }
-  .hero { padding-block: 2.3rem 2.6rem; }
-  .names { grid-template-columns: 1fr; }
-  footer { flex-wrap: wrap; }
+.banner-inner { display: flex; align-items: center; min-height: clamp(355px, 32vw, 500px); padding-block: 36px; }
+.event {
+  width: fit-content;
+  max-width: 100%;
+  background: rgb(255 252 240 / 96%);
+  padding: clamp(22px, 2.5vw, 40px) clamp(24px, 3.4vw, 52px);
+  box-shadow: 4px 5px 0 rgb(32 64 58 / 16%);
+  border-top: 3px solid var(--teal);
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.mark { display: inline-flex; align-items: center; gap: .55rem; font-size: .86rem; letter-spacing: .12em; font-weight: 750; text-decoration: none; }
+.event-title, h1, h2, .lead, .days { font-family: var(--serif); font-weight: 500; }
+.event-title { margin: .55rem 0 .9rem; font-size: clamp(2.25rem, 4.8vw, 4.6rem); line-height: 1.02; letter-spacing: -.05em; }
+.dateline { display: flex; flex-wrap: wrap; gap: .1em .8em; margin: 0; font-size: clamp(.92rem, 1.15vw, 1.1rem); font-weight: 600; }
+.dateline span:first-child { color: var(--rust); }
+.interior .banner-inner { min-height: 205px; padding-block: 18px; }
+.interior .event { padding: .85rem 1.65rem 1rem; }
+.interior .event-title { font-size: clamp(1.9rem, 2.65vw, 2.85rem); margin: .3rem 0 .5rem; }
+.interior .mark img { width: 27px; height: 26px; }
+nav { background: #fffdf6; border-bottom: 1px solid var(--line); }
+.nav-links { display: flex; flex-wrap: wrap; gap: 0 clamp(.8rem, 2.6vw, 2.8rem); }
+.nav-links a { padding: .92rem 0 .75rem; border-bottom: 3px solid transparent; color: var(--ink); text-decoration: none; font-size: .93rem; font-weight: 600; }
+.nav-links a:hover, .nav-links a[aria-current] { color: var(--rust); border-color: var(--rust); }
+main { padding-block: clamp(2.6rem, 5vw, 4.9rem); }
+h1, h2 { line-height: 1.1; letter-spacing: -.045em; margin: 0; }
+.home h2, .page-title { font-size: clamp(2.35rem, 4vw, 3.65rem); }
+.page-title { padding-bottom: .6em; }
+p { margin: 0 0 .8rem; max-width: 68ch; }
+p:last-child { margin-bottom: 0; }
+.welcome { display: grid; grid-template-columns: 1fr minmax(170px, .33fr); align-items: start; gap: 9%; padding-bottom: 2.9rem; }
+.welcome h2 { margin-bottom: .55em; }
+.lead { font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1.3; letter-spacing: -.022em; }
+.date-card { border-block: 2px solid var(--teal); text-align: center; padding: 1.05rem .3rem; line-height: 1.35; }
+.month { font-size: .85rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); }
+.days { font-size: 3.5rem; letter-spacing: -.06em; line-height: 1.15; }
+.days span { padding-inline: .08em; }
+.date-card p { font-size: .89rem; margin-bottom: .5rem; }
+.calendar { display: inline-block; font-size: .94rem; font-weight: 650; }
+.calendar span { margin-left: .18rem; }
+.row { border-top: 1px solid var(--line); padding-block: clamp(1.6rem, 3vw, 2.7rem); display: grid; grid-template-columns: 1fr 2.1fr; gap: 6%; }
+.row:last-child { padding-bottom: 0; }
+.row h2, .home .row h2 { font-size: clamp(1.65rem, 2.5vw, 2.25rem); }
+.editions, .people { padding: 0; margin: 0; list-style: none; }
+.editions { display: flex; flex-wrap: wrap; gap: .5rem 1.65rem; }
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .65rem 1.2rem; margin-top: 1rem; }
+footer { border-top: 1px solid var(--line); background: #f2f1e5; }
+footer .wrap { display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap; padding-block: 1.3rem; font-size: .87rem; }
+@media (max-width: 720px) {
+  .banner-inner { min-height: 330px; align-items: flex-end; }
+  .banner { background-position: 68% center; }
+  .event { padding: 1.15rem 1.4rem; }
+  .nav-links { gap: 0 1.15rem; padding-block: .3rem; }
+  .nav-links a { padding-block: .48rem .3rem; }
+  .row { grid-template-columns: 1fr; gap: .75rem; }
+  .welcome { grid-template-columns: 1fr; gap: 1.5rem; }
+  .date-card { display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap; text-align: left; border-bottom: 0; padding-top: .7rem; }
+  .date-card .days { font-size: 2rem; }
+}
+@media (max-width: 450px) {
+  .banner-inner { padding-block: 1.1rem; }
+  .event-title { font-size: clamp(1.75rem, 7.7vw, 2.15rem); }
+  .event, .interior .event { padding: .75rem 1rem; }
+  .dateline { display: grid; gap: 0; }
+  .nav-links { column-gap: .98rem; }
+  .nav-links a { font-size: .88rem; }
+}
