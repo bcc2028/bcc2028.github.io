@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 277">
+  <title>British Combinatorial Committee</title>
+  <g fill="none" stroke="#171717" stroke-width="6" stroke-linejoin="round">
+    <path d="M157 27 31 244H283Z"/>
+    <path d="M157 27V244M31 244 220 135M94 135 283 244"/>
+  </g>
+  <g fill="#ef452e">
+    <circle cx="157" cy="27" r="26"/>
+    <circle cx="220" cy="135" r="26"/>
+    <circle cx="31" cy="244" r="26"/>
+    <circle cx="157" cy="244" r="26"/>
+  </g>
+  <g fill="#fff" stroke="#ef452e" stroke-width="5">
+    <circle cx="94" cy="135" r="29"/>
+    <circle cx="157" cy="172" r="29"/>
+    <circle cx="283" cy="244" r="29"/>
+  </g>
+  <g fill="#ef452e">
+    <path fill-rule="evenodd" d="M80 117h15c8 0 12 4 12 9 0 4-2 7-5 8 5 1 8 4 8 9 0 7-5 10-14 10H80Zm7 6v9h7c4 0 6-2 6-5s-2-4-6-4Zm0 15v9h8c5 0 8-1 8-5 0-3-3-4-8-4Z"/>
+    <path id="bcc-letter-c" d="M171 160l-5 5a11 11 0 0 0-9-4c-7 0-11 5-11 11s4 11 11 11a11 11 0 0 0 9-4l5 5a18 18 0 0 1-14 6c-11 0-18-8-18-18s7-18 18-18a18 18 0 0 1 14 6Z"/>
+    <use href="#bcc-letter-c" transform="translate(126 72)"/>
+  </g>
+</svg>

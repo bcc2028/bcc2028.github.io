@@ -33,7 +33,7 @@ a:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
   box-shadow: .4rem .4rem 0 var(--coral);
 }
 .mark { display: inline-flex; align-items: center; gap: .55rem; font-size: .86rem; letter-spacing: .12em; font-weight: 700; text-decoration: none; }
-.mark img { width: 48px; height: auto; padding: 4px; border-radius: .45rem; background: #fff; }
+.mark img { width: 44px; height: auto; }
 .event-title, h1, h2, .lead, .days { font-family: var(--heading); font-weight: 700; }
 .event-title { margin: .55rem 0 .9rem; font-size: clamp(2.3rem, 5vw, 4.35rem); line-height: .98; letter-spacing: -.04em; }
 .dateline { display: flex; flex-wrap: wrap; gap: .1em .8em; margin: 0; font-size: clamp(.92rem, 1.15vw, 1.1rem); font-weight: 600; }
@@ -41,7 +41,7 @@ a:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
 .interior .banner-inner { min-height: 205px; padding-block: 18px; }
 .interior .event { padding: .85rem 1.65rem 1rem; }
 .interior .event-title { font-size: clamp(1.85rem, 2.7vw, 2.65rem); margin: .3rem 0 .5rem; }
-.interior .mark img { width: 37px; }
+.interior .mark img { width: 34px; }
 nav { background: var(--paper); border-bottom: 1px solid var(--line); }
 .nav-links { display: flex; flex-wrap: wrap; gap: .35rem .5rem; padding-block: .65rem; }
 .nav-links a { padding: .55rem .9rem; border-radius: 999px; color: var(--ink); text-decoration: none; font-size: .93rem; font-weight: 700; }
