@@ -73,6 +73,11 @@ p:last-child { margin-bottom: 0; }
 .editions { display: flex; flex-wrap: wrap; gap: .5rem 1.65rem; }
 footer { border-top: 1px solid var(--line); background: var(--lavender); }
 footer .wrap { display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap; padding-block: 1.3rem; font-size: .87rem; }
+@media (min-width: 1560px) {
+  .home .banner { background-position: center top; }
+  /* The waterfront artwork is 3:1. Leave room for the towers and river on wide displays. */
+  .home .banner-inner { min-height: max(500px, 28vw); }
+}
 @media (max-width: 720px) {
   .banner-inner { min-height: 330px; align-items: flex-end; }
   .banner { background-position: 68% center; }
